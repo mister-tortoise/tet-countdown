@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta
+            http-equiv="Content-Security-Policy"
+            content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline';"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tết Countdown</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap" rel="stylesheet">
+</head>
+<body>
+<canvas id="fireworks"></canvas>
+
+<main class="widget">
+    <header class="window-bar">
+        <span class="window-title">✦ XUÂN ĐOÀN VIÊN ✦</span>
+        <button id="minimize" title="Thu nhỏ">−</button>
+        <button id="close" title="Đóng">×</button>
+    </header>
+
+    <div class="blossom blossom-left">🌼</div>
+    <div class="blossom blossom-right">🌼</div>
+
+    <section class="content">
+        <div class="lantern">🏮</div>
+        <p class="eyebrow">CHÚC MỪNG NĂM MỚI</p>
+        <h1>Tết Nguyên Đán</h1>
+        <p class="subtitle">Xuân an khang · Tết thịnh vượng</p>
+
+        <div class="divider">
+            <span>✦</span>
+            <span>✿</span>
+            <span>✦</span>
+        </div>
+
+        <p class="countdown-label">CÒN LẠI</p>
+
+        <div class="countdown">
+            <div class="time-box">
+                <strong id="days">000</strong>
+                <span>NGÀY</span>
+            </div>
+            <div class="time-box">
+                <strong id="hours">00</strong>
+                <span>GIỜ</span>
+            </div>
+            <div class="time-box">
+                <strong id="minutes">00</strong>
+                <span>PHÚT</span>
+            </div>
+            <div class="time-box">
+                <strong id="seconds">00</strong>
+                <span>GIÂY</span>
+            </div>
+        </div>
+
+        <p id="tet-date" class="tet-date">Đang tính ngày Tết...</p>
+        <div class="date-picker">
+            <label for="custom-date">Chọn ngày muốn đếm đến</label>
+            <div class="date-picker-controls">
+                <input id="custom-date" type="date" />
+                <button id="apply-date" type="button">Áp dụng</button>
+            </div>
+            <button id="auto-date" class="auto-date" type="button" hidden>
+                Đếm tự động đến Tết
+            </button>
+            <p id="date-error" class="date-error" role="alert" hidden></p>
+        </div>
+        <p class="wish">🌸 Vạn sự như ý · Phúc lộc đầy nhà 🌸</p>
+    </section>
+</main>
+
+<script src="./renderer.js"></script>
+</body>
+</html>

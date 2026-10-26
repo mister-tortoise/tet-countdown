@@ -1,0 +1,48 @@
+{
+  "name": "tet-countdown",
+  "version": "1.0.0",
+  "description": "Tết Countdown Desktop Widget",
+  "main": "main.js",
+  "author": "mister-tortoise",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis"
+  },
+  "build": {
+    "appId": "com.mister-tortoise.tet-countdown",
+    "productName": "Tết Countdown",
+    "artifactName": "Tet-Countdown-Setup-${version}.${ext}",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html",
+      "style.css",
+      "renderer.js",
+      "node_modules/lunar-javascript/**/*"
+    ],
+    "win": {
+      "target": "nsis",
+        "icon": "build/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Tết Countdown"
+    }
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "dependencies": {
+    "lunar-javascript": "1.7.7"
+  },
+  "devDependencies": {
+    "electron": "^45.0.0",
+    "electron-builder": "^26.18.0"
+  }
+}
